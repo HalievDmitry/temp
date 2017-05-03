@@ -8,13 +8,8 @@
             <label>B2B Checkout</label>
             <tab>fisha</tab>
             <resource>Fisha_B2BCheckout::config</resource>
-
             <group id="cart" translate="label" type="text" sortOrder="1" showInDefault="10" showInWebsite="1" showInStore="1">
                 <label>Cart Options</label>
-                <field id="hide_subtotal" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Hide Minicart Subtotal</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
                 <field id="hide_summary" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Hide Summary Sidebar</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
@@ -31,6 +26,14 @@
                     <source_model>Magento\Payment\Model\Config\Source\Allmethods</source_model>
                 </field>
             </group>
+            <group id="checkout" translate="label" type="text" sortOrder="30" showInDefault="10" showInWebsite="1" showInStore="1">
+                <label>Checkout Options</label>
+                <field id="disable_checkout" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
         </section>
     </system>
 </config>

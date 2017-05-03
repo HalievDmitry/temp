@@ -1,43 +1,11 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
-    <!-- <referenceContainer name="cart.summary">
-        <action method="unsetChild" ifconfig="b2bcheckout/cart/hide_summary">
-            <argument name="alias" xsi:type="string">checkout.cart.summary.title</argument>
-        </action>
-    </referenceContainer> -->
-
-    <!-- <referenceContainer name="checkout.cart.container">
-        <action method="unsetChild" ifconfig="b2bcheckout/cart/hide_summary">
-            <argument name="container" xsi:type="string">cart.summary</argument>
-        </action>
-    </referenceContainer> -->
-    <!-- <referenceContainer name="cart.summary" remove="true" /> -->
-
-    <!-- <referenceBlock name="checkout.cart.summary.title" remove="true"/> -->
-    <!-- <referenceBlock name="checkout.cart.summary.title">
-        <action method="setTemplate" ifconfig="b2bcheckout/cart/hide_summary">
-            <argument name="name" xsi:type="string"></argument>
-        </action>
-    </referenceBlock> -->
-
-    <!-- <referenceContainer name="cart.summary"> -->
-        <!-- <referenceBlock name="checkout.cart.summary.title" remove="true" ifconfig="b2bcheckout/cart/hide_subtotal" /> -->
-        <!-- <action method="unsetChild">
-            <argument name="name" xsi:type="string">checkout.cart.summary.title</argument>
-        </action> -->
-        <!-- <block name="checkout.cart.summary.title" remove="true" /> -->
-    <!-- </referenceContainer> -->
-
-    <!-- <referenceContainer name="cart.summary">
-        <action method="unsetChild" ifconfig="b2bcheckout/cart/hide_summary">
-            <argument name="block" xsi:type="string">checkout.cart.summary.title</argument>
-        </action>
-    </referenceContainer> -->
-
-    <!-- <referenceContainer name="cart.summary">
-        <block name="checkout.cart.summary.title">
-    </referenceContainer> -->
+    <referenceBlock name="checkout.cart.summary.title" remove="true" ifconfig="b2bcheckout/cart/hide_summary" />
+    <referenceBlock name="checkout.cart.shipping" remove="true" ifconfig="b2bcheckout/cart/hide_summary" />
+    <referenceBlock name="checkout.cart.coupon" remove="true" ifconfig="b2bcheckout/cart/hide_summary" />
+    <referenceBlock name="checkout.cart.shortcut.buttons" remove="true" ifconfig="b2bcheckout/cart/hide_summary" />
+    <referenceBlock name="checkout.cart.methods.multishipping" remove="true" ifconfig="b2bcheckout/cart/hide_summary" />
 
     <referenceBlock name="checkout.cart.methods.onepage.bottom">
         <action method="setTemplate">

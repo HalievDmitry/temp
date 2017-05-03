@@ -20,12 +20,8 @@ class Create extends \Magento\Framework\App\Action\Action
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Quote\Model\QuoteManagement $quoteManagement,
         \Magento\Customer\Api\CustomerRepositoryInterface $customerRepository
-
     ) {
         $this->_checkoutSession = $checkoutSession;
-        // \Zend_Debug::dump(get_class($this->_checkoutSession));
-
-
         $this->_customerSession = $customerSession;
         $this->_urlBuilder = $urlBuilder;
         $this->_scopeConfig = $scopeConfig;
@@ -64,7 +60,6 @@ class Create extends \Magento\Framework\App\Action\Action
 
         $quote->setPaymentMethod($paymentMethod);
         $quote->setInventoryProcessed(false);
-        $quote->save();
 
         $quote->getPayment()->importData(['method' => $paymentMethod]);
         $quote->collectTotals()->save();
@@ -85,8 +80,7 @@ class Create extends \Magento\Framework\App\Action\Action
                 ->setLastRealOrderId($order->getIncrementId())
                 ->setLastOrderStatus($order->getStatus());
 
-            $this->_checkoutSession->clearQuote();
-            $quote->removeAllItems()->save();
+            return $resultRedirect->setPath('checkout/onepage/success');
         }
         return $resultRedirect->setPath('checkout/cart');
     }
